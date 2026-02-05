@@ -1,0 +1,32 @@
+# IDE / AI assistants (не коммитить в репо)
+.cursor
+.claude
+
+# Dependencies
+node_modules/
+
+# Build / output
+dist/
+build/
+*.local
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# Logs and debug
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+nul

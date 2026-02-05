@@ -1,0 +1,91 @@
+# Checkpoint #0 — Intake Phase
+
+checkpoint:
+  id: "CP-000-intake-2026-02-04"
+  created_at: "2026-02-04"
+  created_by: "Orchestrator Agent"
+
+  phase: "intake"
+  status: "completed"
+
+  summary: |
+    Проект "Emotional Balance (Нейро-Психолог 24/7)" инициализирован.
+    HealthTech платформа психологической поддержки через Telegram WebApp
+    на базе российских LLM (GigaChat/YandexGPT). Методы КПТ, дневник эмоций,
+    голосовые сессии, детектор кризисных состояний. Freemium + B2B модель.
+    TAM ~50 млрд руб к 2027. Целевой рынок: 15M+ россиян.
+
+  participating_agents:
+    - agent: "Orchestrator"
+      contribution: "Анализ идеи, создание Project Brief, инициализация Context Store"
+
+  artifacts:
+    - path: "context/project-brief.yaml"
+      status: "created"
+      summary: "Project Brief с описанием продукта, scope, constraints, tech stack"
+
+  decisions:
+    - id: "DEC-001"
+      decision: "Telegram WebApp как основной клиент"
+      rationale: "Мгновенный доступ в момент тревоги, низкий барьер входа, push-уведомления"
+      stakeholder: "Пользователь"
+    - id: "DEC-002"
+      decision: "GigaChat/YandexGPT как LLM-бэкенд"
+      rationale: "Соответствие ФЗ-152, хранение данных в РФ, русский язык"
+      stakeholder: "Пользователь"
+    - id: "DEC-003"
+      decision: "Django + React + PostgreSQL как tech stack"
+      rationale: "Зрелый стек, большое сообщество, подходит для HealthTech"
+      stakeholder: "Orchestrator"
+    - id: "DEC-004"
+      decision: "LangChain/LangGraph для AI-пайплайнов"
+      rationale: "Гибкость, поддержка нескольких LLM, агентный подход"
+      stakeholder: "Orchestrator"
+    - id: "DEC-005"
+      decision: "Все функции входят в MVP без сужения scope"
+      rationale: "Решение пользователя — полный набор функций с первого релиза"
+      stakeholder: "Пользователь"
+    - id: "DEC-006"
+      decision: "Собственная реализация STT/TTS (self-hosted)"
+      rationale: "Контроль над данными, независимость от облачных сервисов, ФЗ-152"
+      stakeholder: "Пользователь"
+    - id: "DEC-007"
+      decision: "Встроенный маркетплейс психологов"
+      rationale: "Полный контроль, единая экосистема, монетизация комиссии"
+      stakeholder: "Пользователь"
+    - id: "DEC-008"
+      decision: "Wearables: Apple Watch + Mi Band"
+      rationale: "Два наиболее популярных устройства на рынке РФ"
+      stakeholder: "Пользователь"
+    - id: "DEC-009"
+      decision: "B2B через групповое управление в Telegram (без отдельного портала)"
+      rationale: "Минимизация разработки, единая платформа"
+      stakeholder: "Пользователь"
+    - id: "DEC-010"
+      decision: "Настраиваемые лимиты на инфраструктуру и API-вызовы LLM"
+      rationale: "Гибкое управление расходами, масштабируемость"
+      stakeholder: "Пользователь"
+
+  next_actions:
+    - action: "Создать Vision Document"
+      agent: "Product"
+      priority: 1
+    - action: "Создать PRD для MVP"
+      agent: "Product"
+      priority: 2
+    - action: "Провести конкурентный анализ"
+      agent: "Research"
+      priority: 3
+    - action: "Определить метрики и tracking plan"
+      agent: "Analytics"
+      priority: 4
+    - action: "Проанализировать бизнес-модель и unit-экономику"
+      agent: "Business-Analyst"
+      priority: 5
+
+  blockers: []
+
+  metrics:
+    completion_percentage: 100
+    documents_created: 1
+    decisions_made: 10

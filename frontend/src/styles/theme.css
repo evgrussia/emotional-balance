@@ -1,0 +1,166 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Emotional Balance Color Palette */
+  --sage-green: #5F9A63;
+  --warm-blue: #5289AB;
+  --soft-lavender: #8477B4;
+  --warm-coral: #DE5438;
+  --background-warm: #FAFAF8;
+  --card-bg: #FFFFFF;
+  --text-primary: #262624;
+  --text-secondary: #737370;
+  --border-neutral: #E8E8E3;
+  --sage-mist: #F0F6F0;
+  --sage-light: #D9EAD9;
+  --lavender-light: #F3F0F8;
+  --blue-light: #EFF5F9;
+  
+  /* Theme mappings */
+  --background: var(--background-warm);
+  --foreground: var(--text-primary);
+  --card: var(--card-bg);
+  --card-foreground: var(--text-primary);
+  --popover: var(--card-bg);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--sage-green);
+  --primary-foreground: #ffffff;
+  --secondary: var(--warm-blue);
+  --secondary-foreground: #ffffff;
+  --muted: #F4F4F1;
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--soft-lavender);
+  --accent-foreground: #ffffff;
+  --destructive: var(--warm-coral);
+  --destructive-foreground: #ffffff;
+  --border: var(--border-neutral);
+  --input: transparent;
+  --input-background: #F3F3F5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+  --ring: var(--sage-green);
+  --chart-1: var(--sage-green);
+  --chart-2: var(--warm-blue);
+  --chart-3: var(--soft-lavender);
+  --chart-4: var(--warm-coral);
+  --chart-5: #F4B942;
+  --radius: 8px;
+}
+
+.dark {
+  --background: #1A1A18;
+  --foreground: #FAFAF8;
+  --card: #262624;
+  --card-foreground: #FAFAF8;
+  --popover: #262624;
+  --popover-foreground: #FAFAF8;
+  --primary: var(--sage-green);
+  --primary-foreground: #ffffff;
+  --secondary: var(--warm-blue);
+  --secondary-foreground: #ffffff;
+  --muted: #3A3A38;
+  --muted-foreground: #A8A8A3;
+  --accent: var(--soft-lavender);
+  --accent-foreground: #ffffff;
+  --destructive: var(--warm-coral);
+  --destructive-foreground: #ffffff;
+  --border: #3A3A38;
+  --input: #3A3A38;
+  --ring: var(--sage-green);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sage-green: var(--sage-green);
+  --color-warm-blue: var(--warm-blue);
+  --color-soft-lavender: var(--soft-lavender);
+  --color-warm-coral: var(--warm-coral);
+  --color-sage-mist: var(--sage-mist);
+  --color-sage-light: var(--sage-light);
+  --color-lavender-light: var(--lavender-light);
+  --color-blue-light: var(--blue-light);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.5;
+  }
+
+  label {
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}

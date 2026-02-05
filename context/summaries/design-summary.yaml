@@ -1,0 +1,95 @@
+# Design Phase Summary
+# Level 1 — загружается по фазам
+
+phase_summary:
+  phase: "Design"
+  status: "completed"
+  duration: "2026-02-04"
+
+  key_outcomes:
+    - "User Flows: user flows для 47 user stories, 18 эпиков, Mermaid-диаграммы, safety-critical flows (SOS, Crisis)"
+    - "Information Architecture: sitemap 3 уровня, Bottom Tab Bar (4 таба), SOS floating button, tier-gated navigation, B2B vs B2C IA"
+    - "Voice & Tone: brand personality (заботливый, компетентный, доступный), 'на ты', tone variations по 11 контекстам, emotional safety principles"
+    - "Design Foundations: цветовая палитра (sage green, warm blue, soft lavender), SOS accent, dark mode, Inter typeface, 4px grid, rounded corners"
+    - "Content Guidelines: 6 writing principles, style guide (числа, даты, валюта), глоссарий 20+ терминов, запрещённые термины, accessibility content"
+    - "Wireframes: 54 экрана (WF-001—WF-054), ASCII wireframes, state variations, Telegram WebApp SDK patterns"
+    - "Design Tokens: CSS custom properties + JSON, 11 категорий токенов, dark mode, Telegram theme integration, --eb- namespace"
+    - "Interaction Patterns: 10 категорий паттернов (navigation, input, feedback, safety-critical, gamification, media, gestures, transitions, accessibility, Telegram SDK)"
+    - "UX Copy Patterns: готовые тексты для 14 категорий (buttons, forms, errors, empty states, SOS/crisis, chat, paywall, gamification, push, onboarding, legal, B2B)"
+    - "Component Library: 32 компонента в 5 категориях (Inputs, Display, Navigation, Layout, Specialized), variants/sizes/states/anatomy/accessibility"
+    - "Responsive Guidelines: breakpoints (mobile/tablet/desktop), Telegram WebApp viewport, grid system, typography scaling, dark mode, performance targets"
+
+  key_decisions:
+    - id: "DESIGN-001"
+      decision: "Bottom Tab Bar с 4 табами: Главная, Чат, Дневник, Ещё"
+      rationale: "Оптимально для mobile-first, основные действия доступны в 1 тап"
+    - id: "DESIGN-002"
+      decision: "SOS-кнопка floating 56×56px, z-index 900, 1-tap без подтверждения"
+      rationale: "Safety-critical: скорость важнее подтверждения, DEC-027"
+    - id: "DESIGN-003"
+      decision: "Crisis overlay non-dismissible, z-index 1000, exit через tap+hold 2s"
+      rationale: "Safety-critical: предотвращение случайного закрытия, DEC-017"
+    - id: "DESIGN-004"
+      decision: "Guilt-free геймификация: дерево роста, NO streak punishment, мягкие сбросы"
+      rationale: "DEC-031: терапевтическая геймификация без guilt-триггеров"
+    - id: "DESIGN-005"
+      decision: "Design tokens с namespace --eb-, 3 уровня (primitive → semantic → component)"
+      rationale: "Масштабируемость, dark mode, Telegram theme integration"
+
+  artifacts:
+    # --- UX Agent ---
+    - path: "docs/design/user-flows.md"
+      type: "User Flows"
+      summary: "User flows для 47 user stories, Mermaid-диаграммы, safety-critical flows, error paths"
+    - path: "docs/design/information-architecture.md"
+      type: "Information Architecture"
+      summary: "Sitemap 3 уровня, navigation (Bottom Tab Bar), content hierarchy, tier-gated, B2B IA"
+    - path: "docs/design/wireframes.md"
+      type: "Wireframes"
+      summary: "54 ASCII wireframes (WF-001—WF-054), state variations, Telegram WebApp patterns, accessibility"
+    - path: "docs/design/interaction-patterns.md"
+      type: "Interaction Patterns"
+      summary: "10 категорий паттернов, safety-critical interactions, gamification, gestures, transitions"
+    # --- UI Agent ---
+    - path: "docs/design/design-foundations.md"
+      type: "Design Foundations"
+      summary: "Color palette, typography, spacing, grid, shadows, border-radius, motion principles"
+    - path: "docs/design/design-tokens.md"
+      type: "Design Tokens"
+      summary: "CSS custom properties + JSON, 11 категорий, dark mode, Telegram theme mapping"
+    - path: "docs/design/component-library.md"
+      type: "Component Library"
+      summary: "32 компонента, 5 категорий, variants/sizes/states, ASCII anatomy, Do/Don't, accessibility"
+    - path: "docs/design/responsive-guidelines.md"
+      type: "Responsive Guidelines"
+      summary: "Breakpoints, Telegram viewport, grid system, typography scaling, performance, dark mode"
+    # --- Content Agent ---
+    - path: "docs/design/voice-and-tone.md"
+      type: "Voice & Tone"
+      summary: "Brand personality, voice characteristics, tone variations по 11 контекстам, emotional safety"
+    - path: "docs/design/content-guidelines.md"
+      type: "Content Guidelines"
+      summary: "Writing principles, style guide, глоссарий 20+ терминов, запрещённые термины, accessibility"
+    - path: "docs/design/ux-copy-patterns.md"
+      type: "UX Copy Patterns"
+      summary: "Готовые тексты для 14 категорий, SOS/crisis copy, paywall copy, guilt-free gamification copy"
+
+  dependencies_for_next:
+    - "Architecture phase: System Design на основе 18 модулей PRD и Design компонентов"
+    - "Architecture phase: Data Model на основе wireframes и user flows"
+    - "Architecture phase: API Contracts на основе interaction patterns и component library"
+    - "Architecture phase: Security Requirements (SOS/Crisis flows, ФЗ-152, crisis detector)"
+    - "Development phase: Frontend implementation на основе design tokens и component library"
+    - "Development phase: Telegram WebApp SDK integration по responsive guidelines"
+
+  blockers: []
+
+  metrics:
+    documents_created: 11
+    total_lines: 17539
+    ux_documents: 4
+    ui_documents: 4
+    content_documents: 3
+    wireframes_count: 54
+    components_count: 32
+    design_decisions: 5
